@@ -4,7 +4,6 @@ import  '../css/courses.css'
 
 class Courses extends React.Component
 {
-   
     constructor(props)
     {
         super(props)
@@ -46,6 +45,7 @@ class Courses extends React.Component
         this.state.link = 'https://test.mytablemesa.com/api/courses?orderBy=popularity+desc&expand=provider&limit=24&profession=&subjectAreaCode=&state=&provider=&name=' + cr.value
         this.componentDidMount()
         this.render()
+        console.log(this.state.data)
     }
     
     render()
