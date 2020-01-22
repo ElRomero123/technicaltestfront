@@ -1,18 +1,21 @@
 import React from 'react'
+import '../css/course.css'
+
 
 class Course extends React.Component
 {
     render()
     {
-        const {id, image, imageUrl, maximumCredits, price} = this.props
+        const {name, imageText, maximumCredits, price, rating} = this.props
         return (
-            <div>
-                <p>{id}</p>
-                <p>{image}</p>
-                <p>{imageUrl}</p>
-                <p>{maximumCredits}</p>
+            <div className='course'>
+                <div>
+                    <p>{name}</p>
+                    <p>{imageText}</p>
+                </div>
                 <p>{price}</p>
-
+                <p>{rating}</p>
+                <p>{maximumCredits}</p>
             </div>
         )
     }

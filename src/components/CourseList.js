@@ -7,11 +7,13 @@ function CourseList(props)
             {props.List.map((course) => {
                 return(
                     <Course 
+                        key={course.id}
                         id={course.id}
-                        image={course.image}
-                        imageUrl={course.imageUrl}
+                        name={course.name}
+                        imageText={course.imageText}
                         maximumCredits={course.maximumCredits}
                         price={course.price}
+                        rating={course.rating}
                     />
                 )
             })}
