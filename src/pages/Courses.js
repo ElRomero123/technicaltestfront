@@ -61,7 +61,7 @@ class Courses extends React.Component
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
         const scrolled = window.scrollY;
 
-        if(scrolled > scrollable - 100)
+        if(scrolled >= scrollable - 1)
         {
             this.handleSubmit()
         }
