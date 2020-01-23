@@ -1,0 +1,32 @@
+/* line 1, ../sass/menu.scss */
+#buttons {
+  background-image: url(../img/HeaderImage.jpg);
+  height: auto;
+  width: 82,5%;
+  padding: 0px 130px;
+}
+/* line 3, ../sass/menu.scss */
+#buttons #btnCourses {
+  background-color: white;
+}
+/* line 4, ../sass/menu.scss */
+#buttons button:hover {
+  color: 2ec4a5;
+  background-color: white;
+}
+/* line 9, ../sass/menu.scss */
+#buttons button {
+  transition: 0.15s;
+  color: #3dd0f5;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: RobotoRegular;
+  outline: 0px;
+  border: 0px;
+  padding: 5px 8px;
+}
+
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/RobotoRegular.ttf");
+}

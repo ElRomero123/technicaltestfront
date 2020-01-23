@@ -5,7 +5,6 @@ const Link = 'https://tmbackend.azurewebsites.net/api/courses/5'
 
 class Courses extends React.Component
 {
-    
     constructor(props)
     {
         super(props)
@@ -25,9 +24,19 @@ class Courses extends React.Component
 
     fetchExercises = async() => 
     {
-        let result
-        result   = await fetch(this.state.link)
-        this.setState({data:await result.json()})
+        if(this.state.page === 0)
+        {
+            let result
+            result   = await fetch(this.state.link)
+            this.setState({data:await result.json()})
+        }
+        else
+        {
+            let result, data
+            result   = await fetch(this.state.link)
+            data     = await result.json()
+            this.setState({data:this.state.data.concat(data)})
+        }
     }
 
     handleSubmit = e => 
@@ -54,14 +63,18 @@ class Courses extends React.Component
             } 
         )
     }
-    
+
     render()
     {
         return(
             <main id='courses'>
-                <input id='criteria' type='name' onChange={this.inputSearch}></input>
+                <div id='searchField'>
+                    <input id='criteria' type='name' onChange={this.inputSearch} placeholder='Search all courses'/>
+                    <p id='line'>____________________________________________________________________________________________________________________________________________</p>
+                </div>
+                
                 <CourseList List={this.state.data} />
-                <button onClick={this.handleSubmit}>Siguiente</button>
+                <button onClick={this.handleSubmit}>Más</button>
             </main>)
     }
 }

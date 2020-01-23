@@ -5,7 +5,7 @@ import Educators from '../pages/Educators'
 import Menu from '../components/Menu'
 
 const App = () =>   <div>
-                        <BrowserRouter>  
+                        <BrowserRouter> 
                             <Menu/>
                             <Switch>
                                 <Route exact path='/courses' component={Courses} />

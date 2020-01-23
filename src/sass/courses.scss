@@ -1,5 +1,31 @@
 #courses
 {
+    #searchField
+    {
+        #criteria
+        {
+            color: rgb(139, 139, 139);
+            background-color: #F7FBFC;
+            outline: 0px;
+            font-size: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 0px;
+        }
+
+        #line
+        {
+            font-size: 6px;
+            color: rgb(58, 58, 58);
+            padding: 0px;
+            margin: 0px;
+        }
+
+        text-align: justify;
+
+        padding: 20px;
+    }
+    
+    background-color: #F7FBFC;
+    padding: 2px;
     text-align: center;
-    padding: 5px;
 }

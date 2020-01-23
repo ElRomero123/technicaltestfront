@@ -1,5 +1,27 @@
 /* line 1, ../sass/courses.scss */
 #courses {
+  background-color: #F7FBFC;
+  padding: 2px;
   text-align: center;
-  padding: 5px;
+}
+/* line 3, ../sass/courses.scss */
+#courses #searchField {
+  text-align: justify;
+  padding: 20px;
+}
+/* line 5, ../sass/courses.scss */
+#courses #searchField #criteria {
+  color: #8b8b8b;
+  background-color: #F7FBFC;
+  outline: 0px;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0px;
+}
+/* line 15, ../sass/courses.scss */
+#courses #searchField #line {
+  font-size: 6px;
+  color: #3a3a3a;
+  padding: 0px;
+  margin: 0px;
 }

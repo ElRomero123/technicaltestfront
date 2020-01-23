@@ -1,20 +1,123 @@
 /* line 1, ../sass/course.scss */
 .course {
-  font-size: 10px;
-  font-family: Arial;
-  padding: 10px;
-  margin: 4px;
-  background-color: red;
-  height: 140px;
-  width: 200px;
+  border-radius: 4px;
+  border: 0.4px solid #cfcfcf;
+  color: black;
+  background-color: #FFFFFF;
   display: inline-block;
   text-align: justify;
+  height: auto;
+  width: 340px;
+  padding: 1px;
+  margin: 15px;
 }
 /* line 3, ../sass/course.scss */
-.course p {
-  color: black;
+.course .courseFooter {
+  background-color: #FFFFFF;
+  height: 35px;
+  width: 340px;
+}
+/* line 5, ../sass/course.scss */
+.course .courseFooter .c3 {
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+/* line 7, ../sass/course.scss */
+.course .courseFooter .c3 .TagRating {
+  background-color: orange;
+  height: 24px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 9, ../sass/course.scss */
+.course .courseFooter .c3 .TagRating .StartPattern {
+  height: 24px;
+  width: 120px;
+  background-image: url(../img/Starts.png);
+}
+/* line 20, ../sass/course.scss */
+.course .courseFooter .c3 .TagPrice {
+  font-size: 20px;
+  color: #0084f5;
+  width: 190px;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 29, ../sass/course.scss */
+.course .courseFooter .c3 p {
+  margin: 0px;
+  font-family: RobotoRegular;
+}
+/* line 39, ../sass/course.scss */
+.course .courseMain {
+  padding: 10px;
+  background-color: #FFFFFF;
+  height: 120px;
+  width: 320px;
+}
+/* line 41, ../sass/course.scss */
+.course .courseMain .c2 {
+  padding: 40px 10px 10px 10px;
+}
+/* line 43, ../sass/course.scss */
+.course .courseMain .c2 .TagImageText {
+  color: #82888a;
+  font-size: 13px;
+}
+/* line 48, ../sass/course.scss */
+.course .courseMain .c2 .TagName {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+/* line 53, ../sass/course.scss */
+.course .courseMain .c2 p {
+  padding: 0px;
+  margin: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow-y: hidden;
   overflow-x: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-family: RobotoRegular;
+}
+/* line 67, ../sass/course.scss */
+.course .courseHeader {
+  border-bottom: 0.4px solid #cfcfcf;
+  background-color: rgba(217, 222, 226, 0.39);
+  height: 50px;
+  width: 340px;
+}
+/* line 69, ../sass/course.scss */
+.course .courseHeader .c1 {
+  padding: 11px 10px;
+}
+/* line 71, ../sass/course.scss */
+.course .courseHeader .c1 .creditBanner {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 0.4px solid #cfcfcf;
+  font-family: RobotoRegular;
+  font-size: 12px;
+  color: #82888a;
+}
+/* line 72, ../sass/course.scss */
+.course .courseHeader .c1 img {
+  width: 70px;
+  height: 70px;
+  padding: 2px 152px 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@font-face {
+  font-family: SansSerif;
+  src: url("../fonts/SansSerif.TTF");
+}
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/RobotoRegular.ttf");
 }

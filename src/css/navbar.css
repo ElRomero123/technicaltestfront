@@ -1,6 +1,38 @@
 /* line 1, ../sass/navbar.scss */
 header {
-  height: 110px;
+  background-image: url(../img/HeaderImage.jpg);
+  height: auto;
   width: 100%;
-  background-color: black;
+}
+/* line 3, ../sass/navbar.scss */
+header #Filters {
+  font-family: RobotoRegular;
+  font-size: 15px;
+  color: white;
+  padding: 60px 10px;
+  text-align: center;
+}
+/* line 5, ../sass/navbar.scss */
+header #Filters .s {
+  font-family: RobotoRegular;
+  font-size: 15px;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background-color: #0589ff;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 19, ../sass/navbar.scss */
+header #Filters p {
+  padding: 10px;
+  margin: 0px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/RobotoRegular.ttf");
 }
