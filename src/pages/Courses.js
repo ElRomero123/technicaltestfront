@@ -3,6 +3,10 @@ import CourseList from '../components/CourseList'
 import  '../css/courses.css'
 const Link = 'https://tmbackend.azurewebsites.net/api/courses/5'
 
+window.addEventListener('scroll', () => {
+    
+})
+
 class Courses extends React.Component
 {
     constructor(props)
@@ -20,24 +24,25 @@ class Courses extends React.Component
     async componentDidMount()
     {
         await this.fetchExercises()
+        window.addEventListener('scroll', this.handleScroll)
     }
 
     fetchExercises = async() => 
     {
+        let result, data
         if(this.state.page === 0)
         {
-            let result
             result   = await fetch(this.state.link)
             this.setState({data:await result.json()})
         }
         else
         {
-            let result, data
             result   = await fetch(this.state.link)
             data     = await result.json()
             this.setState({data:this.state.data.concat(data)})
         }
     }
+
 
     handleSubmit = e => 
     {
@@ -49,6 +54,17 @@ class Courses extends React.Component
                 }
             )
         })
+    }
+
+    handleScroll = () =>
+    {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+
+        if(scrolled > scrollable - 100)
+        {
+            this.handleSubmit()
+        }
     }
 
     inputSearch = e =>
@@ -69,12 +85,12 @@ class Courses extends React.Component
         return(
             <main id='courses'>
                 <div id='searchField'>
+                    <div id='imgSearch'/>
                     <input id='criteria' type='name' onChange={this.inputSearch} placeholder='Search all courses'/>
                     <p id='line'>____________________________________________________________________________________________________________________________________________</p>
                 </div>
                 
                 <CourseList List={this.state.data} />
-                <button onClick={this.handleSubmit}>Más</button>
             </main>)
     }
 }

@@ -2,16 +2,6 @@
 {
     #searchField
     {
-        #criteria
-        {
-            color: rgb(139, 139, 139);
-            background-color: #F7FBFC;
-            outline: 0px;
-            font-size: 23px;
-            font-family: Arial, Helvetica, sans-serif;
-            border: 0px;
-        }
-
         #line
         {
             font-size: 6px;
@@ -20,12 +10,46 @@
             margin: 0px;
         }
 
-        text-align: justify;
+        #criteria:focus
+        {
+            color: rgb(153, 153, 153);
+        }
 
+        #criteria
+        {
+            transition: 0.15s;
+            color: rgb(199, 199, 199);
+            background-color: #F7FBFC;
+            outline: 0px;
+            font-size: 18px;
+            font-family: RobotoRegular;
+            border: 0px;
+            width: 300px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        #imgSearch
+        {
+            background-image: url(../img/images.png);
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+       
+        text-align: justify;
         padding: 20px;
     }
     
     background-color: #F7FBFC;
     padding: 2px;
     text-align: center;
+}
+
+@font-face
+{
+    font-family: RobotoRegular;
+    src: url('../fonts/RobotoRegular.ttf');
 }

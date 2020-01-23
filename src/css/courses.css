@@ -10,18 +10,40 @@
   padding: 20px;
 }
 /* line 5, ../sass/courses.scss */
-#courses #searchField #criteria {
-  color: #8b8b8b;
-  background-color: #F7FBFC;
-  outline: 0px;
-  font-size: 23px;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 0px;
-}
-/* line 15, ../sass/courses.scss */
 #courses #searchField #line {
   font-size: 6px;
   color: #3a3a3a;
   padding: 0px;
   margin: 0px;
+}
+/* line 13, ../sass/courses.scss */
+#courses #searchField #criteria:focus {
+  color: #999999;
+}
+/* line 18, ../sass/courses.scss */
+#courses #searchField #criteria {
+  transition: 0.15s;
+  color: #c7c7c7;
+  background-color: #F7FBFC;
+  outline: 0px;
+  font-size: 18px;
+  font-family: RobotoRegular;
+  border: 0px;
+  width: 300px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 32, ../sass/courses.scss */
+#courses #searchField #imgSearch {
+  background-image: url(../img/images.png);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fonts/RobotoRegular.ttf");
 }
