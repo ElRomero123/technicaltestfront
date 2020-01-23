@@ -6,16 +6,16 @@ class Course extends React.Component
 {
     render()
     {
-        const {name, imageText, maximumCredits, price, rating} = this.props
+        const {Id, ImageUrl, Name, ImageText, MaximumCredits, Price, Rating } = this.props
         return (
             <div className='course'>
-                <div>
-                    <p>{name}</p>
-                    <p>{imageText}</p>
-                </div>
-                <p>{price}</p>
-                <p>{rating}</p>
-                <p>{maximumCredits}</p>
+                <p>{Id}</p>
+                <p>{ImageUrl}</p>
+                <p>{Name}</p>
+                <p>{ImageText}</p>
+                <p>{MaximumCredits}</p>
+                <p>{Price}</p>
+                <p>{Rating}</p>
             </div>
         )
     }

@@ -3,20 +3,3 @@
   text-align: center;
   padding: 5px;
 }
-/* line 3, ../sass/courses.scss */
-#courses span {
-  background-image: url();
-  background-repeat: repeat-x;
-  color: rgba(0, 0, 0, 0.54);
-  background-size: 14px 13px;
-  cursor: pointer;
-  display: block;
-  font-family: Arial;
-  font-size: 14px;
-  font-weight: 400;
-  height: 13px;
-  line-height: 21.98px;
-  top: 1px;
-  white-space: nowrap;
-  width: 63px;
-}

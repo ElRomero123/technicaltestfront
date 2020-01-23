@@ -1,16 +1,20 @@
 import React from 'react'
 import CourseList from '../components/CourseList'
 import  '../css/courses.css'
+const Link = 'https://tmbackend.azurewebsites.net/api/courses/5'
 
 class Courses extends React.Component
 {
+    
     constructor(props)
     {
         super(props)
         this.state = 
         {
-            link: 'https://test.mytablemesa.com/api/courses?orderBy=popularity+desc&expand=provider&limit=24&profession=&subjectAreaCode=&state=&provider=&name=',
-            data:[]
+            link: Link + '?name=&page=0',
+            data: [],
+            page: 0,
+            name: ''
         }
     }
 
@@ -21,39 +25,41 @@ class Courses extends React.Component
 
     fetchExercises = async() => 
     {
-        let res = await fetch(this.state.link)
-        let string = await res.json()
-        const data = string.items
-        this.setState({data})
-        if(string.next == null){this.state.link = 'END'}
-        else{this.state.link = 'https://test.mytablemesa.com' + string.next}
+        let result
+        result   = await fetch(this.state.link)
+        this.setState({data:await result.json()})
     }
 
     handleSubmit = e => 
     {
-        if(this.state.link === 'END'){alert('Fín de los Cursos')}
-        else
+        this.setState({page: this.state.page+1}, () =>  
         {
-            this.componentDidMount()
-            this.render()
-        }
+            this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
+                {
+                    this.componentDidMount(); this.render(); 
+                }
+            )
+        })
     }
 
-    inputChange = e =>
+    inputSearch = e =>
     {
-        let cr = document.getElementById('criteria')
-        this.state.link = 'https://test.mytablemesa.com/api/courses?orderBy=popularity+desc&expand=provider&limit=24&profession=&subjectAreaCode=&state=&provider=&name=' + cr.value
-        this.componentDidMount()
-        this.render()
-        console.log(this.state.data)
+        this.setState({name:e.target.value, page: 0}, () => 
+            {
+                this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
+                {
+                    this.componentDidMount(); this.render(); 
+                }
+                )
+            } 
+        )
     }
     
     render()
     {
         return(
             <main id='courses'>
-                <input id='criteria' type='name'></input>
-                <button onClick={this.inputChange}>Buscar</button>
+                <input id='criteria' type='name' onChange={this.inputSearch}></input>
                 <CourseList List={this.state.data} />
                 <button onClick={this.handleSubmit}>Siguiente</button>
             </main>)
