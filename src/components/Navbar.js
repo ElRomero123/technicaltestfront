@@ -1,5 +1,9 @@
 import React from 'react'
+
+//Styles of Navbar, control presentation content of tag <header>
 import '../css/navbar.css'
+
+//Functional component, using Arrow Functions with ECMAScript 6 Notation
 const Navbar = () => 
 <header>
     <div id='Filters'>

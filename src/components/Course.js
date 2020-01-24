@@ -1,4 +1,6 @@
 import React from 'react'
+
+// Styles of Course Card
 import '../css/course.css'
 
 
@@ -6,7 +8,7 @@ class Course extends React.Component
 {
     render()
     {
-        
+        // Config Presentation Price Tag 
         const {ImageUrl, Name, ImageText, MaximumCredits, Rating } = this.props
         var {Price} = this.props
         if(Price <= 0)
@@ -18,6 +20,7 @@ class Course extends React.Component
             Price = '$' + Price
         }
         
+        // Render final Card
         return (
             <div className='course'>
                 <div className='courseHeader'>
