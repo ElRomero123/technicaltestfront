@@ -9,7 +9,7 @@ class Course extends React.Component
     render()
     {
         // Config Presentation Price Tag 
-        const {ImageUrl, Name, ImageText, MaximumCredits, Rating } = this.props
+        const {ImageUrl, Name, ImageText, MaximumCredits, Rating} = this.props
         var {Price} = this.props
         if(Price <= 0)
         {
@@ -25,7 +25,7 @@ class Course extends React.Component
             <div className='course'>
                 <div className='courseHeader'>
                     <div className='c1'>
-                        <img src={ImageUrl} alt={ImageUrl} />
+                        <img src={ImageUrl} alt='..' />
                         <p className='creditBanner'><b>{MaximumCredits} CREDIT</b></p>
                     </div>
                 </div>

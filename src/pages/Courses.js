@@ -7,7 +7,8 @@ import CourseList from '../components/CourseList'
 import  '../css/courses.css'
 
 // Link of deployed backend, it created in second-part of Condor Labs Technical Test
-const Link = 'https://tmbackend.azurewebsites.net/api/courses/5'
+const Link = 'https://test.mytablemesa.com/api/courses?orderBy=popularity+desc&expand=provider&limit=24&profession=&subjectAreaCode=&state=&provider=&name='
+const Domain = 'https://test.mytablemesa.com'
 
 // Class Component
 class Courses extends React.Component
@@ -18,10 +19,9 @@ class Courses extends React.Component
         super(props)
         this.state = 
         {
-            link: Link + '?name=&page=0',
+            link: Link,
             data: [],
-            page: 0,
-            name: ''
+            next: null
         }
     }
 
@@ -36,26 +36,10 @@ class Courses extends React.Component
 
     fetchExercises = async() => 
     {
-        /*
-        If Page is more than 0, it means user Scrolled Bottom, here concat old 24 Courses array with new 24 Courses Array
-        In other case, it make new request and put new 24 Courses Cards into screen, this can be use in 2 cases:
-
-        - Search using Name criteria  
-        - Initial Request. Name is " " 
-        */
-
-        let result, data
-        if(this.state.page === 0)
-        {
-            result   = await fetch(this.state.link)
-            this.setState({data:await result.json()})
-        }
-        else
-        {
-            result   = await fetch(this.state.link)
-            data     = await result.json()
-            this.setState({data:this.state.data.concat(data)})
-        }
+        let result = await fetch(this.state.link), Data = await result.json()
+        if(this.state.next === null){this.setState({data:Data.items})}
+        else{this.setState({data:this.state.data.concat(Data.items)})}
+        this.setState({next:Data.next})
     }
 
     // This event detect with User Scrolled Bottom, and call handleSubmit
@@ -73,26 +57,19 @@ class Courses extends React.Component
     // Handle Submit make new request to obtain other 24 results. Note this method, increases Page each new request
     handleSubmit = e => 
     {
-        this.setState({page: this.state.page+1}, () =>  
+        this.setState({link: Domain + this.state.next}, () =>  
         {
-            this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
-                {
-                    this.componentDidMount(); this.render(); 
-                }
-            )
+            //console.log(this.state.link)
+            this.fetchExercises(); this.render(); 
         })
     }
 
     // Input Search make new request to obtain new 24 results, using name criteria. Note, this method reload page with 0
     inputSearch = e =>
     {
-        this.setState({name:e.target.value, page: 0}, () => 
+        this.setState({next: null, link: Link + e.target.value}, () => 
             {
-                this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
-                {
-                    this.componentDidMount(); this.render(); 
-                }
-                )
+                this.fetchExercises(); this.render(); 
             } 
         )
     }
