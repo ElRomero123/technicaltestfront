@@ -3,6 +3,8 @@ import React from 'react'
 // Styles of Course Card
 import '../css/course.css'
 
+const domain = 'https://www.mytablemesa.com'
+
 
 class Course extends React.Component
 {
@@ -25,7 +27,7 @@ class Course extends React.Component
             <div className='course'>
                 <div className='courseHeader'>
                     <div className='c1'>
-                        <img src={ImageUrl} alt={ImageUrl} />
+                        <img src={domain + ImageUrl} alt='...' />
                         <p className='creditBanner'><b>{MaximumCredits} CREDIT</b></p>
                     </div>
                 </div>

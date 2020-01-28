@@ -6,8 +6,8 @@ const CourseList = (props) =>
             {props.List.map((course) => {
                 return(
                     <Course 
-                        key={course.Id}
-                        Id={course.Id}
+                        key={course.id}
+                        Id={course.id}
                         ImageUrl={course.imageUrl}
                         Name={course.name}
                         ImageText={course.provider.name}
