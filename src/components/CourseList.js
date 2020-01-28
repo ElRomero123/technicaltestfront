@@ -8,12 +8,12 @@ const CourseList = (props) =>
                     <Course 
                         key={course.Id}
                         Id={course.Id}
-                        ImageUrl={course.ImageUrl}
-                        Name={course.Name}
-                        ImageText={course.ImageText}
-                        MaximumCredits={course.MaximumCredits}
-                        Price={course.Price}
-                        Rating={course.Rating}
+                        ImageUrl={course.imageUrl}
+                        Name={course.name}
+                        ImageText={course.provider.name}
+                        MaximumCredits={course.maximumCredits}
+                        Price={course.price}
+                        Rating={course.rating}
                     />
                 )
             })}

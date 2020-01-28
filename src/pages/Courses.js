@@ -7,7 +7,7 @@ import CourseList from '../components/CourseList'
 import  '../css/courses.css'
 
 // Link of deployed backend, it created in second-part of Condor Labs Technical Test
-const Link = 'https://tmbackend.azurewebsites.net/api/courses/5'
+const Link = 'https://tmbackendnode.herokuapp.com/api/course'
 
 // Class Component
 class Courses extends React.Component
@@ -18,7 +18,7 @@ class Courses extends React.Component
         super(props)
         this.state = 
         {
-            link: Link + '?name=&page=0',
+            link: Link + '//0',
             data: [],
             page: 0,
             name: ''
@@ -75,7 +75,7 @@ class Courses extends React.Component
     {
         this.setState({page: this.state.page+1}, () =>  
         {
-            this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
+            this.setState({link: Link + '/' + this.state.name + '/' + this.state.page}, () => 
                 {
                     this.componentDidMount(); this.render(); 
                 }
@@ -88,7 +88,7 @@ class Courses extends React.Component
     {
         this.setState({name:e.target.value, page: 0}, () => 
             {
-                this.setState({link: Link + '?name=' + this.state.name + '&page=' + this.state.page}, () => 
+                this.setState({link: Link + '/' + this.state.name + '/' + this.state.page}, () => 
                 {
                     this.componentDidMount(); this.render(); 
                 }
